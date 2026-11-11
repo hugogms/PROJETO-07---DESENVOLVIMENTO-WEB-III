@@ -1,0 +1,16 @@
+{
+  "name": "gerenciamento-livros",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de livros com CRUD e API REST",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "allowScripts": {
+    "sqlite3@5.1.7": true
+  }
+}

@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Minha Biblioteca</h1>
+            <p>Organize seus livros e acompanhe suas leituras.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Pesquisar livros</h2>
+            <p>Procure um livro pelo título na Open Library.</p>
+
+            <div class="search-area">
+                <input
+                    type="text"
+                    id="pesquisaApi"
+                    placeholder="Digite o título do livro..."
+                >
+                <button type="button" id="btnPesquisarApi">
+                    Pesquisar
+                </button>
+            </div>
+
+            <div id="resultadosApi"></div>
+        </section>
+
+        <section class="card">
+            <h2 id="tituloFormulario">Cadastrar livro</h2>
+
+            <form id="formLivro">
+                <input type="hidden" id="livroId">
+
+                <div class="form-grid">
+                    <div class="campo">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="isbn">ISBN</label>
+                        <input type="text" id="isbn">
+                    </div>
+
+                    <div class="campo">
+                        <label for="ano_publicacao">Ano de publicação</label>
+                        <input
+                            type="number"
+                            id="ano_publicacao"
+                            min="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero">Gênero</label>
+                        <input type="text" id="genero" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="status">Status de leitura</label>
+                        <select id="status" required>
+                            <option value="Quero ler">Quero ler</option>
+                            <option value="Lendo">Lendo</option>
+                            <option value="Concluído">Concluído</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="btnSalvar">
+                        Cadastrar livro
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-secundario"
+                        hidden
+                    >
+                        Cancelar edição
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="list-header">
+                <div>
+                    <h2>Meus livros</h2>
+                    <p>Confira os livros cadastrados na sua biblioteca.</p>
+                </div>
+
+                <input
+                    type="search"
+                    id="pesquisaLivros"
+                    placeholder="Buscar na minha biblioteca..."
+                >
+            </div>
+
+            <div id="mensagem"></div>
+
+            <div id="listaLivros">
+                <p class="mensagem-vazia">
+                    Carregando livros...
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Minha Biblioteca — Sistema de Gerenciamento de Livros</p>
+    </footer>
+
+</body>
+</html>
